@@ -27,8 +27,8 @@ pipeline {
 		}
 		stage('Deployment') {
 	    	steps {
-				sh 'sshpass -p "gamut" scp target/gamutkart.war lakshmi@172.17.0.2:/home/lakshmi/Distros/apache-tomcat-8.5.38/webapps'
-				sh 'sshpass -p "gamut" ssh lakshmi@172.17.0.2 "JAVA_HOME=/home/lakshmi/Distros/jdk1.8.0_151" "/home/lakshmi/Distros/apache-tomcat-8.5.38/bin/startup.sh"'
+				sh 'sshpass -p "lakshmi" scp target/gamutkart.war lakshmi@172.17.0.2:/home/lakshmi/Distros/apache-tomcat-8.5.38/webapps'
+				sh 'sshpass -p "lakshmi" ssh lakshmi@172.17.0.2 "JAVA_HOME=/home/lakshmi/Distros/jdk1.8.0_151" "/home/lakshmi/Distros/apache-tomcat-8.5.38/bin/startup.sh"'
 	    	}
 		}
     }
